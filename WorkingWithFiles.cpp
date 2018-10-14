@@ -26,34 +26,19 @@ int main() {
   }
 
   //read all data from file
-  while (getline(read_File, data)){
-    std::cout << data << std::endl;
-  }
+  get_line_count();
 
-  //prompt
-  std::cout << "Would you like to change/amend your data file? [Y/N]: "
+  //prompt for changing/ammending file
+  std::cout << "Would you like to change or add onto your file? [C/A]: "
             << std::flush;
   char ans;
-  std::cin >> ans;
+  cin >> ans;
 
+  if (ans == 'C') {
+    std::cout << "Enter the number for the coresponding line to change it: "
+              << std::flush;
 
-  if (ans == 'Y') {
-    std::cout << "Change or Add? [C/A]: " << std::flush;
-    cin >> ans;
-
-    if (ans == 'C') {
-      //switch statment that allows user's to change a specific line
-    } else
-    if (ans == 'A') {
-      //find a way to not overwrite file but just add onto it
-    } else
-    std::cout << "Please enter 'C' or 'N': " << std::flush;
-    //make it so that the program starts up again at (39)
-
-  } else
-  if (ans == 'N') {
-    read_File.close();
-    std::cout << "Thanks for using my program." << std::endl;
   }
+
 
 }
